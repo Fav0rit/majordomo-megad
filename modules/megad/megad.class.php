@@ -401,7 +401,7 @@ function usual(&$out) {
       $params['VALUE']=$prop['CURRENT_VALUE_STRING'];
       $params['value']=$params['VALUE'];
       $params['port']=$prop['NUM'];
-      $methodRes=callMethod($prop['LINKED_OBJECT'].'.'.$prop['LINKED_METHOD'], $params);
+      $methodRes=callMethodSafe($prop['LINKED_OBJECT'].'.'.$prop['LINKED_METHOD'], $params);
 
       if (is_string($methodRes)) {
        $ecmd=$methodRes;
@@ -427,7 +427,7 @@ function usual(&$out) {
        $params['VALUE']=$prop['CURRENT_VALUE_STRING2'];
        $params['value']=$params['VALUE'];
        $params['port']=$prop['NUM'];
-       callMethod($prop['LINKED_OBJECT2'].'.'.$prop['LINKED_METHOD2'], $params);
+       callMethodSafe($prop['LINKED_OBJECT2'].'.'.$prop['LINKED_METHOD2'], $params);
       }
      }
 
